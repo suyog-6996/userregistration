@@ -53,9 +53,15 @@ PassWord()
 {
 read -p "ENTER THE PASSWORD : " PASSWORD
 
-if [[ ${#PASSWORD} -ge 8 && "$PASSWORD" == *[[:upper:]]* && "$PASSWORD" == *[[:digit:]]* ]]
-then
-	echo "VALID ";
+if [[ ${#PASSWORD} -ge 8 && "$PASSWORD" == *[[:upper:]]* && "$PASSWORD" == *[[:digit:]]* && "$PASSWORD" != *[[:space:]]* ]]
+	then
+		if [[ $PASSWORD == *[[:punct:]]* ]]
+			then
+				echo "VALID ";
+		else
+			echo "INVALID PASSWORD ";
+			PassWord
+		fi
 else
 	echo "INVALID PASSWORD ";
 	PassWord
