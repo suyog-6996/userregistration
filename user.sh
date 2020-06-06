@@ -69,8 +69,8 @@ fi
 }
 }
 
-#firstName
-#lastName
-#EmailAddress
-#PhoneNumber
+firstName
+lastName
+EmailAddress
+PhoneNumber
 PassWord
