@@ -26,5 +26,19 @@ else
 fi
 }
 
+EmailAddress()
+{
+read -p "ENTER THE EMAIL ADDRESS : " EMAIL
+pat="^[a-z]{3,}([.]{1}[0-9a-zA-Z]{3,})?@[a-zA-Z]{2}[.]{1}([a-z]{2})+[.]?([a-zA-Z]{2})?$"
+if [[ $EMAIL =~ $pat ]];
+then
+	echo "VALID ";
+else
+	echo "INVALID EMAIL ADDRESS";
+	EmailAddress
+fi
+}
+
 firstName
 lastName
+EmailAddress
