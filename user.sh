@@ -53,12 +53,11 @@ PassWord()
 {
 read -p "ENTER THE PASSWORD : " PASSWORD
 
-if [[ ${#PASSWORD} -ge 8 && "$PASSWORD" == *[[:upper:]]* ]]
+if [[ ${#PASSWORD} -ge 8 && "$PASSWORD" == *[[:upper:]]* && "$PASSWORD" == *[[:digit:]]* ]]
 then
 	echo "VALID ";
 else
 	echo "INVALID PASSWORD ";
-	echo "IT SHOULD BE MINIMUM 8 CHARACTERS AND HAVE ATLEAST 1 UPPERCASE"
 	PassWord
 fi
 }
