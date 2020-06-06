@@ -49,9 +49,22 @@ else
 	PhoneNumber
 fi
 }
+PassWord()
+{
+read -p "ENTER THE PASSWORD : " PASSWORD
+pat="^[a-zA-Z]{8,}$"
+if [[ $PASSWORD =~ $pat ]];
+then
+	echo "VALID ";
+else
+	echo "INVALID PASSWORD ";
+	PassWord
+fi
+}
 }
 
 firstName
 lastName
 EmailAddress
 PhoneNumber
+PassWord
