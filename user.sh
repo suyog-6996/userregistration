@@ -37,8 +37,21 @@ else
 	echo "INVALID EMAIL ADDRESS";
 	EmailAddress
 fi
+PhoneNumber()
+{
+read -p "ENTER THE PHONE NUMBER : " PHONE
+pat="^([+]{1}[0-9]{2,3})[ ][0-9]{10}$"
+if [[ $PHONE =~ $pat ]];
+then
+	echo "VALID ";
+else
+	echo "INVALID PHONE NUMBER";
+	PhoneNumber
+fi
+}
 }
 
 firstName
 lastName
 EmailAddress
+PhoneNumber
