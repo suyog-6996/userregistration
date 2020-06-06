@@ -29,7 +29,7 @@ fi
 EmailAddress()
 {
 read -p "ENTER THE EMAIL ADDRESS : " EMAIL
-pat="^[a-z]{3,}([.]{1}[0-9a-zA-Z]{3,})?@[a-zA-Z]{2}[.]{1}([a-z]{2})+[.]?([a-zA-Z]{2})?$"
+pat="^[a-zA-Z0-9]+([._+-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$"
 if [[ $EMAIL =~ $pat ]];
 then
 	echo "VALID ";
