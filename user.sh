@@ -52,19 +52,20 @@ fi
 PassWord()
 {
 read -p "ENTER THE PASSWORD : " PASSWORD
-pat="^[a-zA-Z]{8,}$"
-if [[ $PASSWORD =~ $pat ]];
+
+if [[ ${#PASSWORD} -ge 8 && "$PASSWORD" == *[[:upper:]]* ]]
 then
 	echo "VALID ";
 else
 	echo "INVALID PASSWORD ";
+	echo "IT SHOULD BE MINIMUM 8 CHARACTERS AND HAVE ATLEAST 1 UPPERCASE"
 	PassWord
 fi
 }
 }
 
-firstName
-lastName
-EmailAddress
-PhoneNumber
+#firstName
+#lastName
+#EmailAddress
+#PhoneNumber
 PassWord
